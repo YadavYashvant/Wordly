@@ -1,5 +1,6 @@
 package com.example.wordly.dictionary_feature.data.remote.dto
 
+import com.example.wordly.dictionary_feature.data.local.entity.WordInfoEntity
 import com.example.wordly.dictionary_feature.domain.model.WordInfo
 
 data class WordInfoDto(
@@ -9,8 +10,8 @@ data class WordInfoDto(
     val phonetics: List<PhoneticDto>,
     val word: String
 ) {
-    fun toWordInfo(): WordInfo {
-        return WordInfo(
+    fun toWordInfoEntity(): WordInfoEntity {
+        return WordInfoEntity(
             meanings = meanings.map { it.toMeaning() },
             origin = origin,
             phonetic = phonetic,
