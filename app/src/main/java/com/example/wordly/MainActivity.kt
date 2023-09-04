@@ -28,10 +28,14 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.TextField
+import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.wordly.dictionary_feature.presentation.WordInfoItem
 import kotlinx.coroutines.flow.collectLatest
@@ -77,17 +81,34 @@ class MainActivity : ComponentActivity() {
                                     .fillMaxSize()
                                     .padding(16.dp)
                             ) {
+                                Text(
+                                    text = "Wordly",
+                                    fontSize = 36.sp,
+                                    fontWeight = FontWeight.Bold,
+                                    modifier = Modifier
+                                        .align(Alignment.CenterHorizontally)
+                                        .padding(16.dp)
+
+                                    )
                                 TextField(
                                     value = viewModel.searchQuery.value,
                                     onValueChange = viewModel::onSearch,
-                                    modifier = Modifier.fillMaxWidth(),
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                        .padding(vertical = 16.dp),
+
+                                    shape = MaterialTheme.shapes.large,
+                                    colors = TextFieldDefaults.textFieldColors(
+                                        unfocusedIndicatorColor = Color.Transparent,
+                                        focusedIndicatorColor = Color.Transparent
+                                    ),
                                     placeholder = {
                                         Text(text = "Search for a word..")
                                     }
                                 )
                                 Spacer(modifier = Modifier.height(16.dp))
                                 LazyColumn(
-                                    modifier = Modifier.fillMaxSize()
+                                    modifier = Modifier.fillMaxSize().padding(horizontal = 16.dp)
                                 ) {
                                     items(state.wordInfoItems.size) { i ->
                                         val wordInfo = state.wordInfoItems[i]
