@@ -3,6 +3,7 @@
 -It uses dagger-hilt for dependency injections.<br>
 -Retrofit2 for API calls.<br>
 -Room for storing data in cache memory.<br>
+-It supports android dark theme as well.<br>
 
 
 ![IMG-20230904-WA0006](https://github.com/YadavYashvant/Wordly/assets/113130559/7eac49f4-ab42-446d-8118-b46210c1bbc0)
