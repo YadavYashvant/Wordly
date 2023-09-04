@@ -7,7 +7,8 @@ import com.example.wordly.dictionary_feature.data.local.entity.WordInfoEntity
 
 @Database(
     entities = [WordInfoEntity::class],
-    version = 1
+    version = 1,
+    exportSchema = false
 )
 @TypeConverters(Converter::class)
 abstract class WordInfoDatabase: RoomDatabase() {
