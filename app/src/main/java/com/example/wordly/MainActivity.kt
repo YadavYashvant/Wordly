@@ -33,9 +33,12 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.core.view.WindowCompat
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.wordly.dictionary_feature.presentation.WordInfoItem
 import kotlinx.coroutines.flow.collectLatest
@@ -43,11 +46,19 @@ import kotlinx.coroutines.flow.collectLatest
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+
+    val fontsummary = FontFamily(
+        Font(R.font.dancingscript,FontWeight.Bold)
+    )
+
     @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
     @OptIn(ExperimentalMaterial3Api::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
+
+            WindowCompat.setDecorFitsSystemWindows(window,false)
+
             WordlyTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(
@@ -85,6 +96,7 @@ class MainActivity : ComponentActivity() {
                                     text = "Wordly",
                                     fontSize = 36.sp,
                                     fontWeight = FontWeight.Bold,
+                                    fontFamily = fontsummary,
                                     modifier = Modifier
                                         .align(Alignment.CenterHorizontally)
                                         .padding(16.dp)
