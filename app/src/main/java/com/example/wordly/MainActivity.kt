@@ -94,7 +94,7 @@ class MainActivity : ComponentActivity() {
                             ) {
                                 Text(
                                     text = "Wordly",
-                                    fontSize = 36.sp,
+                                    fontSize = 48.sp,
                                     fontWeight = FontWeight.Bold,
                                     fontFamily = fontsummary,
                                     modifier = Modifier

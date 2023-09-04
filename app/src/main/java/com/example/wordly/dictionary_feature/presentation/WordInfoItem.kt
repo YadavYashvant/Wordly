@@ -40,12 +40,12 @@ fun WordInfoItem(
         Text(text = wordInfo.origin.toString(), fontFamily = fontsignika)
 
         wordInfo.meanings.forEach { meaning ->
-            Text(text = meaning.partOfSpeech, fontWeight = FontWeight.Bold, fontFamily = fontsignika)
+            Text(text = meaning.partOfSpeech, fontWeight = FontWeight.Bold, fontFamily = fontsignika, fontSize = 20.sp)
             meaning.definitions.forEachIndexed { i, definition ->
-                Text(text = "${i + 1}. ${definition.definition}", fontFamily = fontsignika)
+                Text(text = "${i + 1}. ${definition.definition}", fontFamily = fontsignika, fontSize = 18.sp )
                 Spacer(modifier = Modifier.height(8.dp))
                 definition.example?.let { example ->
-                    Text(text = "Example: $example", fontFamily = fontsignika)
+                    Text(text = "Example: $example", fontFamily = fontsignika, fontSize = 18.sp)
                 }
                 Spacer(modifier = Modifier.height(16.dp))
             }
