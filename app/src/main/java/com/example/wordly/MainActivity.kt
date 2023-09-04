@@ -25,6 +25,7 @@ import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Divider
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.SnackbarDefaults.actionColor
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.TextField
@@ -40,8 +41,12 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.view.WindowCompat
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.airbnb.lottie.compose.LottieCompositionSpec
+import com.airbnb.lottie.compose.rememberLottieComposition
 import com.example.wordly.dictionary_feature.presentation.WordInfoItem
 import kotlinx.coroutines.flow.collectLatest
+import androidx.compose.runtime.getValue
+import com.airbnb.lottie.compose.LottieAnimation
 
 
 @AndroidEntryPoint
@@ -68,6 +73,9 @@ class MainActivity : ComponentActivity() {
                     val viewModel: WordInfoViewModel = hiltViewModel()
                     val state = viewModel.state.value
                     val snackbarHostState = remember { SnackbarHostState() }
+                    
+                    val composition by rememberLottieComposition(spec = LottieCompositionSpec.RawRes(R.raw.search))
+                    
 
                     LaunchedEffect(key1 = true) {
                         viewModel.eventFlow.collectLatest { event ->
@@ -120,8 +128,11 @@ class MainActivity : ComponentActivity() {
                                 )
                                 Spacer(modifier = Modifier.height(16.dp))
                                 LazyColumn(
-                                    modifier = Modifier.fillMaxSize().padding(horizontal = 16.dp)
+                                    modifier = Modifier
+                                        .fillMaxSize()
+                                        .padding(horizontal = 16.dp)
                                 ) {
+
                                     items(state.wordInfoItems.size) { i ->
                                         val wordInfo = state.wordInfoItems[i]
                                         if(i > 0) {
@@ -133,7 +144,20 @@ class MainActivity : ComponentActivity() {
                                         }
                                     }
                                 }
+
                             }
+
+                            if (state.isEmpty) {
+                                LottieAnimation(
+                                    composition = composition,
+                                    modifier = Modifier
+                                        .paddingFromBaseline(top = 200.dp)
+                                        .align(Alignment.Center)
+                                        .fillMaxSize(),
+                                    iterations = Int.MAX_VALUE
+                                )
+                            }
+
                             if(state.isLoading) {
                                 CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
                             }

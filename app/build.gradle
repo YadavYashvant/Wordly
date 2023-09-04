@@ -97,6 +97,9 @@ dependencies {
 
     // Kotlin Extensions and Coroutines support for Room
     implementation "androidx.room:room-ktx:2.3.0"
+
+    //lottie animation dependency
+    implementation 'com.airbnb.android:lottie-compose:6.0.0'
 }
 
 kapt {

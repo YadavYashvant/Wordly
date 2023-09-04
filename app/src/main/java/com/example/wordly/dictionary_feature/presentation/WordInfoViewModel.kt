@@ -44,13 +44,15 @@ class WordInfoViewModel @Inject constructor(
                         is Resource.Success -> {
                             _state.value = state.value.copy(
                                 wordInfoItems = result.data ?: emptyList(),
-                                isLoading = false
+                                isLoading = false,
+                                isEmpty = false
                             )
                         }
                         is Resource.Error -> {
                             _state.value = state.value.copy(
                                 wordInfoItems = result.data ?: emptyList(),
-                                isLoading = false
+                                isLoading = false,
+                                isEmpty = false
                             )
                             _eventFlow.emit(UIEvent.ShowSnackbar(
                                 result.message ?: "Unknown error"
@@ -59,7 +61,8 @@ class WordInfoViewModel @Inject constructor(
                         is Resource.Loading -> {
                             _state.value = state.value.copy(
                                 wordInfoItems = result.data ?: emptyList(),
-                                isLoading = true
+                                isLoading = true,
+                                isEmpty = false
                             )
                         }
                     }
