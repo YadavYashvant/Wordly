@@ -21,9 +21,13 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ExitToApp
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Divider
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarDefaults.actionColor
 import androidx.compose.material3.SnackbarHost
@@ -46,6 +50,7 @@ import com.airbnb.lottie.compose.rememberLottieComposition
 import com.example.wordly.dictionary_feature.presentation.WordInfoItem
 import kotlinx.coroutines.flow.collectLatest
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.modifier.modifierLocalConsumer
 import com.airbnb.lottie.compose.LottieAnimation
 
 
@@ -100,6 +105,17 @@ class MainActivity : ComponentActivity() {
                                     .fillMaxSize()
                                     .padding(16.dp)
                             ) {
+
+
+                                IconButton(onClick = { /*TODO*/ },
+                                    modifier = Modifier.align(Alignment.End).wrapContentSize()
+                                ) {
+                                    Icon(
+                                        imageVector = Icons.Default.ExitToApp,
+                                        contentDescription = null
+                                    )
+                                }
+
                                 Text(
                                     text = "Wordly",
                                     fontSize = 48.sp,
