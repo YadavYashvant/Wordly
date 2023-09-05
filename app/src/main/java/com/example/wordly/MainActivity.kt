@@ -106,7 +106,7 @@ class MainActivity : ComponentActivity() {
                                     .padding(16.dp)
                             ) {
 
-
+                                /*
                                 IconButton(onClick = { /*TODO*/ },
                                     modifier = Modifier.align(Alignment.End).wrapContentSize()
                                 ) {
@@ -115,6 +115,8 @@ class MainActivity : ComponentActivity() {
                                         contentDescription = null
                                     )
                                 }
+
+                                 */
 
                                 Text(
                                     text = "Wordly",
