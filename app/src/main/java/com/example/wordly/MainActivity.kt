@@ -118,7 +118,7 @@ class MainActivity : ComponentActivity() {
                                 }
 
                                 // Will be adding dark theme and light theme toggle functionality here
-
+                                // but after some time
 
                                 Text(
                                     text = "Wordly",
