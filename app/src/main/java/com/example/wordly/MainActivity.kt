@@ -23,11 +23,13 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ExitToApp
+import androidx.compose.material.icons.outlined.AddCircle
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Divider
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.IconToggleButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarDefaults.actionColor
 import androidx.compose.material3.SnackbarHost
@@ -106,19 +108,17 @@ class MainActivity : ComponentActivity() {
                                     .padding(16.dp)
                             ) {
 
-                                /*
                                 IconButton(onClick = { /*TODO*/ },
                                     modifier = Modifier.align(Alignment.End).wrapContentSize()
                                 ) {
                                     Icon(
-                                        imageVector = Icons.Default.ExitToApp,
+                                        imageVector = Icons.Outlined.AddCircle,
                                         contentDescription = null
                                     )
                                 }
 
-                                 */
-
                                 // Will be adding dark theme and light theme toggle functionality here
+
 
                                 Text(
                                     text = "Wordly",
