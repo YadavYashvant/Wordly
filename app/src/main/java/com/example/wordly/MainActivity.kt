@@ -108,15 +108,6 @@ class MainActivity : ComponentActivity() {
                                     .padding(16.dp)
                             ) {
 
-                                IconButton(onClick = { /*TODO*/ },
-                                    modifier = Modifier.align(Alignment.End).wrapContentSize()
-                                ) {
-                                    Icon(
-                                        imageVector = Icons.Outlined.AddCircle,
-                                        contentDescription = null
-                                    )
-                                }
-
                                 // Will be adding dark theme and light theme toggle functionality here
                                 // but after some time
 
