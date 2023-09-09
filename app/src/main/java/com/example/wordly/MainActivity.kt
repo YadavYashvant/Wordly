@@ -109,7 +109,7 @@ class MainActivity : ComponentActivity() {
                             ) {
 
                                 // Will be adding dark theme and light theme toggle functionality here
-                                // but after some time
+                                // But after some time
 
                                 Text(
                                     text = "Wordly",
@@ -119,7 +119,6 @@ class MainActivity : ComponentActivity() {
                                     modifier = Modifier
                                         .align(Alignment.CenterHorizontally)
                                         .padding(16.dp)
-
                                     )
                                 TextField(
                                     value = viewModel.searchQuery.value,
