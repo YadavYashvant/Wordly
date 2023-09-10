@@ -53,7 +53,11 @@ import com.example.wordly.dictionary_feature.presentation.WordInfoItem
 import kotlinx.coroutines.flow.collectLatest
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.modifier.modifierLocalConsumer
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
 import com.airbnb.lottie.compose.LottieAnimation
+import kotlinx.coroutines.delay
 
 
 @AndroidEntryPoint
@@ -67,6 +71,9 @@ class MainActivity : ComponentActivity() {
     @OptIn(ExperimentalMaterial3Api::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+
+
         setContent {
 
             WindowCompat.setDecorFitsSystemWindows(window,false)
@@ -154,7 +161,6 @@ class MainActivity : ComponentActivity() {
                                         }
                                     }
                                 }
-
                             }
 
                             if (state.isEmpty) {
@@ -176,5 +182,29 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
+    }
+}
+
+@Composable
+fun Navigation() {
+    val navController = rememberNavController()
+    NavHost(navController = navController, startDestination = "splash_screen") {
+        composable("splash_screen") {
+
+        }
+        composable("main_screen") {
+
+        }
+    }
+}
+
+@Composable
+fun SplashScreen() {
+
+    Box(
+        contentAlignment = Alignment.Center,
+        modifier = Modifier.fillMaxSize()
+    ) {
+        LottieAnimator()
     }
 }
