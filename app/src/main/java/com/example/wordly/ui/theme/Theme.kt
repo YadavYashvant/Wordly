@@ -14,6 +14,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
+import androidx.core.view.ViewCompat
 import androidx.core.view.WindowCompat
 
 private val DarkColorScheme = darkColorScheme(
@@ -46,7 +47,6 @@ fun WordlyTheme(
     content: @Composable () -> Unit
 ) {
     val context = LocalContext.current
-
     val colorScheme = when {
         dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
             val context = LocalContext.current
@@ -59,9 +59,8 @@ fun WordlyTheme(
     val view = LocalView.current
     if (!view.isInEditMode) {
         SideEffect {
-            val window = (view.context as Activity).window
-            window.statusBarColor = Color.Transparent.toArgb()
-            WindowCompat.getInsetsController(window, view).isAppearanceLightStatusBars = darkTheme
+            (view.context as Activity).window.statusBarColor = colorScheme.background.toArgb()
+            ViewCompat.getWindowInsetsController(view)?.isAppearanceLightStatusBars = darkTheme
         }
     }
 
