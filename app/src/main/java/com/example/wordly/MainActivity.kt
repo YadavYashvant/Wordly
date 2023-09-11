@@ -115,6 +115,8 @@ fun Navigation() {
                                 message = event.message
                             )
                         }
+
+                        else -> {}
                     }
                 }
             }
