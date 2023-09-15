@@ -18,5 +18,4 @@ fun LottieAnimator() {
         modifier = Modifier.fillMaxSize(),
         iterations = Int.MAX_VALUE
         )
-    //not in use till now!
 }
