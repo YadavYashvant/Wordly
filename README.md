@@ -8,7 +8,7 @@
 
 <h2 align="center">Screenshots</h2>
 
-| ![IMG-20230904-WA0006](https://github.com/YadavYashvant/Wordly/assets/113130559/7eac49f4-ab42-446d-8118-b46210c1bbc0) | ![IMG-20230904-WA0009](https://github.com/YadavYashvant/Wordly/assets/113130559/22c7014e-b556-44d8-ac04-c5f45757332e) | ![IMG-20230904-WA0010](https://github.com/YadavYashvant/Wordly/assets/113130559/d3d3b061-5a88-447a-9568-943cd542607d)) |
+| ![IMG-20230904-WA0006](https://github.com/YadavYashvant/Wordly/assets/113130559/7eac49f4-ab42-446d-8118-b46210c1bbc0) | ![IMG-20230904-WA0009](https://github.com/YadavYashvant/Wordly/assets/113130559/22c7014e-b556-44d8-ac04-c5f45757332e) | ![IMG-20230904-WA0010](https://github.com/YadavYashvant/Wordly/assets/113130559/d3d3b061-5a88-447a-9568-943cd542607d) |
 |-------------------------------------------------------|-------------------------------------------------------|-------------------------------------------------------|
 ### Light Theme
 
