@@ -206,7 +206,7 @@ fun Navigation() {
 fun SplashScreen(navController: NavController) {
 
     LaunchedEffect(key1 = true) {
-        delay(1500L)
+        delay(500L)
         navController.navigate("main_screen")
     }
 
